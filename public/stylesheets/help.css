@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.problem-title{
+    margin: 8% 0 4% 0;
+}
+.problem{
+    padding: 10px 0 10px 60px;
+}
+.problem .problem-text{
+    margin: 18px 0 15px 35px;
+    color: #828181;
+    font-size: 17px;
+}
+.problem-h3-title{
+    margin: 45px 0 25px 0;
+}
+.media-logo{
+    padding-left: 30px;
+}

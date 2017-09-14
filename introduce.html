@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-title" content="DBeditor | 最简洁的Markdown编辑器">
+    <meta name="keywords" content="DBeditor，Markdown，github，编码猿猴">
+    <title>DBeditor | 最简洁的Markdown编辑器</title>
+    <link rel="shortcut icon" href="/images/logo-ico.ico" type="image/x-icon" >
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: 'Ubuntu Mono', 'Monaco', 'Monospace';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1 {
+            font-family: 'Ubuntu Mono', 'Monaco', 'Monospace';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .Hero {
+            overflow-y: hidden;
+            margin: 0 auto;
+            height: 640px;
+            background-color: #571c94;
+            background-image: url(http://sui.taobao.org/sui/docs/assets/imgs/grid.png), -webkit-gradient(linear, left bottom, right top, color-stop(0%, #571c94), color-stop(100%, #e609cf));
+            background-image: url(http://sui.taobao.org/sui/docs/assets/imgs/grid.png), -webkit-linear-gradient(315deg, #89f56e 0%, #009047 100%);
+            background-image: url(http://sui.taobao.org/sui/docs/assets/imgs/grid.png), -webkit-linear-gradient(315deg, #89f56e 0%, #009047 100%);
+            background-image: url(http://sui.taobao.org/sui/docs/assets/imgs/grid.png), -o-linear-gradient(315deg, #89f56e 0%, #009047 100%);
+            background-repeat: no-repeat;
+            background-position: 50% 40%;
+            padding: 0 10px;
+        }
+
+        .Hero .logo {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 77px auto 0;
+        }
+
+        .Hero h1 {
+            font-size: 5rem;
+            text-align: center;
+            font-weight: normal;
+            color: white;
+            margin: 25px 0 20px 0;
+        }
+
+        .Hero .subtitle {
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 0 40px;
+        }
+
+        .Hero .normal {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #ccc;
+        }
+
+        .Hero a.download-button, .Hero button.download-button {
+            cursor: pointer;
+            display: inline-block;
+            padding: 15px 15px;
+            background-color: #4A90E2;
+            color: white;
+            text-decoration: none;
+            font-size: 1.6rem;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .Introduction {
+            margin-top: -140px;
+        }
+
+        .Introduction .screenshot {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: block;
+            width: 95%;
+        }
+
+        .bloc-lg {
+            padding: 150px 50px;
+        }
+
+        .mg-md {
+            padding: 7% 0 4% 0;
+        }
+
+        p {
+            color: rgba(0, 0, 0, .5);
+            font-size: 20px
+        }
+
+        .version {
+            text-align: center;
+            padding-top: 10%;
+        }
+
+        .version img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .bianpingImg {
+            padding: 10% 0;
+        }
+        .github{
+            padding: 10px 0 0 20px;
+        }
+        .github li a{
+            display: inline-block;
+            font-size: 20px;
+            color: rgba(0, 0, 0, .5);
+        }
+    </style>
+</head>
+<body>
+
+<a href="http://github.com/helpcode">
+    <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"/>
+</a>
+
+
+<div class="Content">
+    <div class="Hero">
+        <img class="logo" src="/images/markdown.png" alt="">
+        <h1>DBeditor</h1>
+        <p class="subtitle">适用于主流操作系统 Linux / Mac / Windows 的轻量 MarkDown 编辑器</p>
+        <p class="normal download">
+            <a href="https://nodejs.org/en/download/"><img src="https://img.shields.io/badge/node.js-6.11.1-blue.svg"
+                                                           alt="nodejs"></a>
+            <a href="http://www.expressjs.com.cn"><img src="https://img.shields.io/badge/express-4.15.2-red.svg"
+                                                       alt="express"></a>
+            <a href="https://nwjs.io/"><img src="https://img.shields.io/badge/nw-0.25.0-yellow.svg" alt="nw"></a>
+            <a href="https://github.com/nwjs-community/nw-builder"><img
+                    src="https://img.shields.io/badge/nw--builder-3.4.1-blue.svg" alt="nw--builder"></a>
+            <a href="https://github.com/chjj/marked"><img src="https://img.shields.io/badge/marked-0.3.6-%23ff69b4.svg"
+                                                          alt="marked"></a>
+        </p>
+        <h3 class="text-center" style="color: #fff; margin-top: 3%">
+            <a href="" style="color: #e8e8e8">Download</a>
+        </h3>
+    </div>
+    <div class="Introduction" style="color: black;">
+        <img src="/images/DBeditor.png" alt="" class="screenshot">
+    </div>
+
+</div>
+<div class="container bloc-lg">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center mg-md">
+                最简单的方法，满足多种写作需要
+            </h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/images/xiezuo.png" width="100%" height="320" alt="">
+                </div>
+                <div class="col-md-7 col-md-offset-1">
+                    <p style="padding-top: 22%">
+                        借助简洁的 Markdown 语言和强大的文字编辑功能，无论是写个人博客、技术文章、学术论文等，都能让您得心应手，事半功倍。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12">
+            <br>
+            <hr>
+        </div>
+
+
+        <div class="col-sm-12">
+            <h1 class="text-center mg-md">
+                简明UI，快捷键操作
+            </h1>
+            <p class="text-center">
+                <img class="bianpingImg" width="85%" src="/images/wewew.png" alt="">
+            </p>
+            <p class="text-center">
+                扁平大方简洁的UI风格，去除多余繁琐的菜单操作，借鉴Vim实现快捷键操作，让您编写文章时双手不需要离开键盘，提高写作的专注度和效率
+            </p>
+        </div>
+
+        <div class="col-sm-12">
+            <br>
+            <hr>
+        </div>
+
+        <div class="col-sm-12">
+            <h1 class="text-center mg-md">
+                离线使用，本地保存文章
+            </h1>
+            <div class="row">
+                <div class="col-md-7 col-md-offset-1">
+                    <p style="padding-top: 22%">
+                        文章数据本地存储，为您提供更加便捷随时随地的阅读体验，同时无论您身处何处，有无网络，都可以通过客户端开始轻松的写作之旅。
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="/images/wnagl.png" width="100%" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12">
+            <br>
+            <hr>
+        </div>
+
+        <div class="col-sm-12">
+            <h1 class="text-center mg-md">
+                全平台支持
+            </h1>
+            <p class="text-center">
+                支持 Linux、Mac、Windows 三大主流操作系统平台，轻松选择适合您的客户端
+            </p>
+
+            <div class="row version">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="text-center">
+                        <img src="/images/linux.png" alt="">
+                        <h3>Linux</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <img src="/images/iphone.png" alt="">
+                    <h3>Mac</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <img src="/images/windows8.png" alt="">
+                    <h3>Windows</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12">
+            <br>
+            <hr>
+        </div>
+
+        <div class="col-sm-12">
+
+            <h1 class="text-center mg-md">
+                开源的力量
+            </h1>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <p class="text-center">
+                        感恩开源，崇尚开源，坚持开源精神！<br>
+                        本次的项目将开源到 GitHub上，网站技术实现上采用Node.js + Express.js + NW.js 开发并进行PC端打包
+                        <br>通过插件 Marked.js 进行的数据转换，感谢开发者提供的优秀作品。
+                        <br>
+                        更多技术问题请看这里：
+                        <br>
+                        <a href=""> --> 项目地址 <-- </a>
+                        <br>
+                    </p>
+                </div>
+                <div class="col-md-12 text-center">
+                    <img src="http://obl1kak28.bkt.clouddn.com/weixin.png" width="150" height="150" alt="weixin">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
