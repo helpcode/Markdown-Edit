@@ -1,9 +1,6 @@
 .DS_Store
 node_modules/
 dist/
-views/
-routes/
-web2exe.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

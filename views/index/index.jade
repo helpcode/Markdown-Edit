@@ -1,0 +1,45 @@
+extends ./../layout
+
+block content
+  link(rel='stylesheet', href='#{indexcss}')
+  script(src='#{markedscript}', type='text/javascript')
+  script(src="#{highlightscript}")
+  script(type='text/javascript').
+    hljs.initHighlightingOnLoad();
+    //实例化菜单监听
+    let menu = new MenuClick();
+
+
+  .row.col-md-12.clearPadding
+    .main-left.col-md-6.col-sm-6.col-xs-6.clearPadding
+      textarea(id="texts" rows="3" oninput="methods.UpdateChange()" placeholder="DBeditor The Best MarkDown Editor")
+      ul.menu-list-icons
+        li
+            img(src="#{menulisticons.save}" )
+        li
+            img(src="#{menulisticons.newfile}")
+        li
+            img(onclick="menu.HelpClick()" src="#{menulisticons.help}")
+
+        li( id="full")
+            img(src="#{menulisticons.full}" onclick="methods.launchFullScreen(document.documentElement)")
+        li(style="display:none" id="exit")
+            img(src="#{menulisticons.exit}" onclick="methods.exitFullscreen()")
+
+        li(id="close")
+            img(onclick="menu.CloseClick()" src="#{menulisticons.close}")
+        li(id="forward")
+            img(onclick="menu.BackClick()" src="#{menulisticons.forwar}")
+        li
+            img(onclick="menu.DeletClick()" src="#{menulisticons.delete}")
+
+
+
+    .main-right.col-md-6.col-sm-6.col-xs-6.clearPadding
+      div(id='show')
+
+  script(type='text/javascript').
+      methods.changeDivHeight();
+
+
+
