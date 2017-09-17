@@ -25,6 +25,44 @@
 - 3：下载地址：https://github.com/helpcode/DBeditor/releases
 - 4：官网地址：http://localhost:3000/introduce
  
+## 安装构建
+
+1：下载源码
+
+```bash
+sudo mkdir Markdown-Edit && sudo chmod 777 -R Markdown-Edit && cd Markdown-Edit
+sudo git clone https://github.com/helpcode/DBeditor.git
+sudo npm install
+``` 
+
+安装解决依赖后打开`package.json`，`scripts`字段中提供有如下命令：
+
+```bash
+"scripts": {
+    # dev阶段通过nw查看运行效果，
+    # 需要npm安装 nw，参见：https://github.com/nwjs/npm-installer
+    "dev": "nw /home/bmy/桌面/DBeditor/Markdown-Edit",
+    # 同上
+    "nw": "nw",
+    
+    # 本地web方式运行网站，node-dev 需要自己安装不要问我
+    # 访问地址http://localhost:3000/welcome
+    "node": "node-dev ./bin/www",
+    
+    # 这里是你需要配置的 nw-builder
+    # linux64为打包平台，包会根据这个参数自动去下载对应SDK
+    # --buildDir 为打包成功输出目录，默认build
+    # /home/bmy/桌面/Markdown-Edit/ 是项目绝对路径
+    "prod": "nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/DBeditor/Markdown-Edit/",
+    
+    # 这个是我自己写的 Linux shell 脚本，具体源码和使用请看 
+    # https://helpcode.github.io/DBeditor/#/?id=开始打包
+    "online": "./../builder.sh",
+    
+    # 这个是 docute 项目文档运行命令
+    "docs": "docute ./docs --out-dir dist --source-maps --presets env"
+  }
+```
 
 ## 截图欣赏
 

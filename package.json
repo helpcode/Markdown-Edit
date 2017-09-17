@@ -6,7 +6,7 @@
   "nodejs": true,
   "private": true,
   "scripts": {
-    "dev": "nw /home/bmy/桌面/Markdown-Edit",
+    "dev": "nw /home/bmy/桌面/DBeditor/Markdown-Edit",
     "node": "node-dev ./bin/www",
     "nw": "nw",
     "prod": "nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/Markdown-Edit/",
