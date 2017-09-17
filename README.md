@@ -197,7 +197,7 @@ npm run online
 
 **Windows下打包：**
 
-照例先来看一张效果图，增强点信心！！
+照例先来看一张效果图，增强点信心吧！！
 
 ![win_index](http://okkzzhtds.bkt.clouddn.com/win_index.PNG)
 
