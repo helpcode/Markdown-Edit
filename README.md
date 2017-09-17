@@ -5,9 +5,15 @@
   DBeditor The Best MarkDown Editor
 </p>
 <p align="center">
-  <a href="https://github.com/helpcode/Node-Crawler/"><img src="https://img.shields.io/travis/rust-lang/rust.svg" alt="rust"></a>
-  <a href="https://nodejs.org/en/download/"><img src="https://img.shields.io/badge/node.js-6.11.1-blue.svg" alt="nodejs"></a>
-  <a href="https://img.shields.io/packagist/l/doctrine/orm.svg"><img src="https://img.shields.io/packagist/l/doctrine/orm.svg" alt="orm"></a>
+  <a href="https://nodejs.org/en/download/"><img src="https://img.shields.io/badge/node.js-6.11.1-blue.svg"
+                                                           alt="nodejs"></a>
+            <a href="http://www.expressjs.com.cn"><img src="https://img.shields.io/badge/express-4.15.2-red.svg"
+                                                       alt="express"></a>
+            <a href="https://nwjs.io/"><img src="https://img.shields.io/badge/nw-0.25.0-yellow.svg" alt="nw"></a>
+            <a href="https://github.com/nwjs-community/nw-builder"><img
+                    src="https://img.shields.io/badge/nw--builder-3.4.1-blue.svg" alt="nw--builder"></a>
+            <a href="https://github.com/chjj/marked"><img src="https://img.shields.io/badge/marked-0.3.6-%23ff69b4.svg"
+                                                          alt="marked"></a>
 
 </p>
 
