@@ -9,7 +9,6 @@ block content
     //实例化菜单监听
     let menu = new MenuClick();
 
-
   .row.col-md-12.clearPadding
     .main-left.col-md-6.col-sm-6.col-xs-6.clearPadding
       textarea(id="texts" rows="3" oninput="methods.UpdateChange()" placeholder="DBeditor The Best MarkDown Editor")
@@ -33,13 +32,13 @@ block content
         li
             img(onclick="menu.DeletClick()" src="#{menulisticons.delete}")
 
-
-
     .main-right.col-md-6.col-sm-6.col-xs-6.clearPadding
       div(id='show')
 
   script(type='text/javascript').
       methods.changeDivHeight();
-
+      $("#texts").scroll(function () {
+          $("#show").scrollTop($("#texts").scrollTop());
+      });
 
 

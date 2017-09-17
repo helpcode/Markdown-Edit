@@ -6,11 +6,12 @@
   "nodejs": true,
   "private": true,
   "scripts": {
-    "dev": "nw /home/bmy/\u684c\u9762/Markdown-Edit",
+    "dev": "nw /home/bmy/桌面/Markdown-Edit",
     "node": "node-dev ./bin/www",
     "nw": "nw",
-    "prod": "nwbuild --platforms linux64 --buildDir dist/ /home/bmy/\u684c\u9762/Markdown-Edit/",
-    "online": "./../builder.sh"
+    "prod": "nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/Markdown-Edit/",
+    "online": "./../builder.sh",
+    "docs": "docute ./docs --out-dir dist --source-maps --presets env"
   },
   "version": "0.0.0",
   "dependencies": {
@@ -23,8 +24,9 @@
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
-    "nw-builder": "^3.4.1",
-    "nw": "^0.25.0"
+    "babel-preset-env": "^1.6.0",
+    "nw": "^0.25.0",
+    "nw-builder": "^3.4.1"
   },
   "webexe_settings": {
     "blacklist": "",

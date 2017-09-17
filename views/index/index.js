@@ -49,6 +49,9 @@ class BaseUtils{
             document.webkitExitFullscreen();
         }
     }
+
+    //编辑区和预览区同步滚动
+
     //初始化 marked 并配置 highlight 代码高亮
     InitMarked(){
         var rendererMD = new marked.Renderer();
