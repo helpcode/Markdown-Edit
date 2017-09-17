@@ -29,6 +29,7 @@
 
 
 
+<<<<<<< HEAD
 <p align="center">
     <img width="90%" height="90%" src="./public/images/home-js.png"/>
 </p>
@@ -36,3 +37,8 @@
 <p align="center">
    <img width="90%" height="90%" src="./public/images/write.png"/>
 </p>
+
+<p align="center">
+    <img width="50%" height="50%" src="./public/images/home-js.png"/>
+</p>
+
