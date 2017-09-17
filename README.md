@@ -47,8 +47,7 @@
 
 <p align="center">
    <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/infert.png"/>
-</p>
- 
+</p> 
  
  
 ## 安装构建
@@ -57,9 +56,6 @@
 
 > 文档地址：[https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
 
-### Linux
-
----
 
 1：下载源码
 
@@ -71,23 +67,33 @@ sudo npm install
 
 这里需要注意`npm install`在安装`nw`和`nw-builder`依赖包的时候特别慢，而且需要翻墙才能下载哦。
 
+
+### Linux 下打包
+
+---
+
+
+
 所以先不要安装依赖，在`package.json`中把`nw`和`nw-builder`配置删除，然后`npm install`先安装其他依赖，之后下载我这里提供的这两个包的压缩版本，下载完成解压直接丢到`node_modules`中，然后分别进入`nw`和`nw-builder`的文件夹中解决他们自身的依赖关系，这样会快一点。
 
 而使用`nw-builder`打包应用的时候它会根据你命令`nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/DBeditor/Markdown-Edit/` 去下载对应的`nw.js`的sdk，我提供的依赖包里面已经包含了一枚`0.25.1-sdk-linux64`的sdk，所以能节省不少的速度。
  
 
-> 下载地址：[Nw.js 依赖包]() [nw-builder 依赖包]()
+> 下载地址：[Nw.js 依赖包](http://okkzzhtds.bkt.clouddn.com/nw.7z) [nw-builder 依赖包](http://okkzzhtds.bkt.clouddn.com/nw-builder.7z)
 
 
 
-_当然了，如果你不需要 `nw`在开发阶段预览网站在PC端的效果，和`nw-builder` 打包工具来打包，那么就不需要配置我上面说的那些东西。直接从`package.json`中把`nw`和`nw-builder`配置删除即可。你可以用我下面说的`builder.sh` shell 脚本的方式来打包_
+_当然了，如果你不需要 `nw`在开发阶段预览网站在PC端的效果，或者说不需要`nw-builder` 打包工具来打包，那么就不需要配置我上面说的那些东西。直接从`package.json`中把`nw`和`nw-builder`配置删除即可。你可以用我下面说的`builder.sh` shell 脚本的方式来打包，也是官方推荐的，我不过写了一个shell脚本来自动完成而已_
 
+
+---
 
 
 安装解决依赖后打开`package.json`，`scripts`字段中提供有如下命令：
 
 ```bash
 "scripts": {
+    # 上面说了，不需要的话就不配置
     # dev阶段通过nw查看运行效果，
     # 需要npm安装 nw，参见：https://github.com/nwjs/npm-installer
     "dev": "nw /home/bmy/桌面/DBeditor/Markdown-Edit",
@@ -98,6 +104,7 @@ _当然了，如果你不需要 `nw`在开发阶段预览网站在PC端的效果
     # 访问地址http://localhost:3000/welcome
     "node": "node-dev ./bin/www",
     
+    # 上面说了，不需要的话就不配置
     # 这里是你需要配置的 nw-builder
     # linux64为打包平台，包会根据这个参数自动去下载对应SDK
     # --buildDir 为打包成功输出目录，默认build
@@ -117,9 +124,9 @@ _当然了，如果你不需要 `nw`在开发阶段预览网站在PC端的效果
 
 > [https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
 
-需要注意的是我们之前用`sudo mkdir Markdown-Edit`创建了文件夹`Markdown-Edit`，这个文件夹里面出除了放置项目源码`DBeditor`，和`DBeditor`同级的是`Nw.js`的 `SDK`，这里推荐下载这个SDK，原因在帮助文档里面写的很清楚，请仔细查看：
+如果你想使用我的脚本来自动打包，那需要注意的是我们之前用`sudo mkdir Markdown-Edit`创建了文件夹`Markdown-Edit`，这个文件夹里面除了放置项目源码`DBeditor`，和`DBeditor`同级的是`Nw.js`的 `SDK`，这里推荐下载这个SDK，原因在帮助文档里面写的很清楚，请仔细查看：
 
-> [nwjs-v0.25.1-linux-x64.tar.gz](https://dl.nwjs.io/v0.25.1/nwjs-v0.25.1-linux-x64.tar.gz)
+> [nwjs-v0.25.1-linux-x64.tar.gz](http://okkzzhtds.bkt.clouddn.com/nwjs-v0.25.1-linux-x64.tar.gz)
 
 下载解压后，放到`Markdown-Edit`文件夹下，然后也是在`Markdown-Edit`文件夹下创建`builder.sh`，具体目录层级和shell代码如下：
 
@@ -131,10 +138,14 @@ Markdown-Edit
  |--- builder.sh
 ```
 
+文件夹名字可以更改，不过请一并修改`builder.sh`中的五个变量配置。
+
 **builder.sh代码如下：**
 
 ```bash
 #!/bin/bash
+
+# 如果改了文件名请修改对应的变量值
 codeDir="./Markdown-Edit/"
 codeModulesNw="./node_modules/nw/"
 codeModulesNwBuilder="./node_modules/nw-builder/"
@@ -184,20 +195,55 @@ npm run online
 
 ---
 
-**1：打包方式1：普通文件 (推荐方式)**
+**Windows下打包：**
 
-在`Windows`系统上,你可以将你的应用所有相关文件与`NW.js`执行文件放在相同文件夹下一起发送给你的用户。确保`nw.exe` 与 `package.json`在相同的文件夹（或目录）下。 或者你可以把你的应用的所有相关文件放在一个单独的文件夹下，并将该文件夹命名为`package.nw`，该文件夹需要放在与`nw.exe`相同的文件夹（或目录）中。
+照例先来看一张效果图，增强点信心！！
 
-在Mac系统中，新建名称为`app.nw`的文件夹，把你的应用所有相关文件放入其中，然后将`app.nw`文件夹放在`nwjs.app/Contents/Resources/`目录下即可。
+![win_index](http://okkzzhtds.bkt.clouddn.com/win_index.PNG)
+
+![windows_write](http://okkzzhtds.bkt.clouddn.com/windows_write.PNG)
+
+- 1：下载对应你操作系统的`Nw.js`sdk，我虚拟机`Windows10`这里提供官方的下载链接：
+
+  > Windows: [32bit](https://dl.nwjs.io/v0.25.1/nwjs-v0.25.1-win-ia32.zip) / [64bit](https://dl.nwjs.io/v0.25.1/nwjs-v0.25.1-win-x64.zip)
+
+- 2:下载下来后，解压`nwjs-v0.25.1-win-x64.zip`。
+
+- 3：打开你项目，在配置好`package.json`后，然后全选所有文件压缩成`xxx.zip`格式，然后改名为`xxx.nw`。
+
+- 4：剪切`xxx.nw` 到 步骤二 的文件夹中，然后执行命令，回车即可看到应用已经运行：
+  > nw.exe xxx.nw 
+
+- 5：如果不想用户直接看到项目源码`xxx.nw`，那么使用命令来合并`nw.exe`和`xxx.nw`，这样就会生成一个你想要的`xxx.exe`然后删除源码`xxx.nw`即可。命令如下：
+  > copy /b nw.exe+xxx.nw app.exe
+
+- 6：这一步我们已经得到了最终的`app.exe`但是`Nw.js`sdk中还有很多其他文件，这时候我们可以用工具，下载后运行打开
+  选择我们需要打包的`app.exe`，然后把sdk文件夹中的所有文件拖到 `Enigma Virtual Box`文件框中，然后点击 [打包]，稍等片刻就好。得到一个`exe`程序，双击运行或者分发给别人使用。
+  > [Enigma Virtual Box](http://www.cr173.com/soft/20501.html)
+ 
+  
+
+步骤是不是很多，虽然很简单但是每次这样打包也是很烦人的，在Linux系统中打包我提供了shell脚本自动化完成这些步骤操作。而windows系统中的脚本我正在写...用法也会和Linux shell一样。程序员要学会偷懒...
 
 
-**2：打包方式2：ZIP压缩文件**
+**Mac 下打包：**
 
-你可以将应用的所有相关文件打成一个名为`package.nw`的压缩包。在`Windows`系统中，将`package.nw`与`NW.js`可执行文件放到相同目录即可。而在`Mac`系统中，则将`package.nw`放到`nwjs.app/Contents/Resources/`目录下。
+- 1：不多说，同样的下载`Nw.js` Mac版本的sdk：
+  > Mac 10.9+: [64bit](https://dl.nwjs.io/v0.25.1/nwjs-v0.25.1-osx-x64.zip)
+
+- 2：同Windows步骤...
+
+- 3：同Windows步骤...
+
+- 4：在`Mac`系统中，则将`package.nw`放到`nwjs.app/Contents/Resources/`目录下即可。
+
+
 
 ---
 
-**这里不要问`Linux`环境下为什么打包教程写的那么详细，因为这是我本机电脑环境，没有`Windows`和`Mac`系统，后期会虚拟机安装然后讲程序打包成安装包方式，尽情期待！**
+**这里不要问`Linux`环境下为什么打包教程写的那么详细，因为这是我本机电脑环境。**
+
+
 
 ## 1：关于我
 
