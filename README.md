@@ -64,7 +64,7 @@ sudo npm install
 所以先不要安装依赖，在`package.json`中把`nw`和`nw-builder`配置删除，然后`npm install`先安装其他依赖，之后下载我这里提供的这两个包的压缩版本，下载完成解压直接丢到`node_modules`中，然后分别进入`nw`和`nw-builder`的文件夹中解决他们自身的依赖关系，这样会快一点。
 
 而使用`nw-builder`打包应用的时候它会根据你命令`nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/DBeditor/Markdown-Edit/` 去下载对应的`nw.js`的sdk，我提供的依赖包里面已经包含了一枚`0.25.1-sdk-linux64`的sdk，所以能节省不少的速度。
-
+ 
 
 > 下载地址：[Nw.js 依赖包]() [nw-builder 依赖包]()
 
