@@ -23,22 +23,21 @@
 - 1：源码地址：https://github.com/helpcode/DBeditor
 - 2：文档地址：https://helpcode.github.io/DBeditor/
 - 3：下载地址：https://github.com/helpcode/DBeditor/releases
+- 4：官网地址：http://localhost:3000/introduce
  
 
 ## 截图欣赏
 
-
-
-<<<<<<< HEAD
 <p align="center">
     <img width="90%" height="90%" src="./public/images/home-js.png"/>
 </p>
 
 <p align="center">
-   <img width="90%" height="90%" src="./public/images/write.png"/>
+   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/index-home.png"/>
 </p>
 
 <p align="center">
-    <img width="50%" height="50%" src="./public/images/home-js.png"/>
+   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/infert.png"/>
 </p>
+
 
