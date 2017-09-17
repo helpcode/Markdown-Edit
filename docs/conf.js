@@ -1,7 +1,5 @@
 docute.init({
     debug: true,
-    //url: docute.isDev ? location.origin : 'http://localhost:8080',
-    //routerMode: 'history',
     announcement: {
         type: 'warning', // warning | danger | success | primary
         html: 'This doc is out-dated!'

@@ -23,9 +23,33 @@
 - 1：源码地址：https://github.com/helpcode/DBeditor
 - 2：文档地址：https://helpcode.github.io/DBeditor/
 - 3：下载地址：https://github.com/helpcode/DBeditor/releases
-- 4：官网地址：http://localhost:3000/introduce
+- 4：官网地址：http://xxxx.xxx.xx.xx/introduce(开发完成，还未部署服务器)
+- 5：网站地址：http://xxxx.xxx.xx.xx/welcome(开发完成，还未部署服务器)
+ 
+ 
+## 截图欣赏
+
+先来看看下面这些截图吧，好让你为下面有点麻烦的配置过程增加点信心，界面还是很简洁的，特别喜欢这种简约扁平大量留白的UI设计！不要问为啥，就是喜欢。
+
+<p align="center">
+    <img width="90%" height="90%" src="./public/images/home-js.png"/>
+</p>
+
+<p align="center">
+   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/index-home.png"/>
+</p>
+
+<p align="center">
+   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/infert.png"/>
+</p>
+ 
+ 
  
 ## 安装构建
+
+骚年，文档记得一定要看，否则不会配置打包那我也没办法了，一定要看哦，相关技术点也要掌握！！
+
+> 文档地址：[https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
 
 1：下载源码
 
@@ -34,6 +58,17 @@ sudo mkdir Markdown-Edit && sudo chmod 777 -R Markdown-Edit && cd Markdown-Edit
 sudo git clone https://github.com/helpcode/DBeditor.git
 sudo npm install
 ``` 
+
+这里需要注意`npm install`在安装`nw`和`nw-builder`依赖包的时候特别慢，而且需要翻墙才能下载哦。
+
+所以先不要安装依赖，在`package.json`中把`nw`和`nw-builder`配置删除，然后`npm install`先安装其他依赖，之后下载我这里提供的这两个包的压缩版本，下载完成解压直接丢到`node_modules`中，然后分别进入`nw`和`nw-builder`的文件夹中解决他们自身的依赖关系，这样会快一点。
+
+而使用`nw-builder`打包应用的时候它会根据你命令`nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/DBeditor/Markdown-Edit/` 去下载对应的`nw.js`的sdk，我提供的依赖包里面已经包含了一枚`0.25.1-sdk-linux64`的sdk，所以能节省不少的速度。
+
+
+> 下载地址：[Nw.js 依赖包]()
+> 下载地址：[nw-builder 依赖包]()
+
 
 安装解决依赖后打开`package.json`，`scripts`字段中提供有如下命令：
 
@@ -64,18 +99,70 @@ sudo npm install
   }
 ```
 
-## 截图欣赏
+更多的如何打包配置我都写在了帮助文档里面，请仔细阅读
 
-<p align="center">
-    <img width="90%" height="90%" src="./public/images/home-js.png"/>
-</p>
+> [https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
 
-<p align="center">
-   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/index-home.png"/>
-</p>
+需要注意的是我们之前用`sudo mkdir Markdown-Edit`创建了文件夹`Markdown-Edit`，这个文件夹里面出除了放置项目源码`DBeditor`，和`DBeditor`同级的是`Nw.js`的 `SDK`，这里推荐下载这个SDK，原因在帮助文档里面写的很清楚，请仔细查看：
 
-<p align="center">
-   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/infert.png"/>
-</p>
+> [nwjs-v0.25.1-linux-x64.tar.gz](https://dl.nwjs.io/v0.25.1/nwjs-v0.25.1-linux-x64.tar.gz)
+
+下载解压后，放到`Markdown-Edit`文件夹下，然后也是在`Markdown-Edit`文件夹下创建`builder.sh`，具体目录层级和shell代码如下：
+
+**目录层级**
+```text
+Markdown-Edit
+ |--- DBeditor
+ |--- nwjs-v0.25.1-linux-x64
+ |--- builder.sh
+```
+
+**builder.sh代码如下：**
+
+```bash
+#!/bin/bash
+codeDir="./Markdown-Edit/"
+codeModulesNw="./node_modules/nw/"
+codeModulesNwBuilder="./node_modules/nw-builder/"
+AppNw="./Markdown-Edit/app.nw"
+nwSDK="./nwjs-v0.25.1-linux-x64/"
+# 移动dev阶段的 nw 和 nwbuilder
+# 脱离 node_modules 到根目录，避免被误打包增加400MB体积
+mv $codeModulesNw $codeModulesNwBuilder ./../
+# zip压缩并更名改后缀为 app.nw
+# 打包完成退回根目录
+zip -r ./app.nw ./ &&  echo 'Create success...' && cd .. && echo 'Back to the root directory...'
+# 移动打包后的 app.nw 源码 到 NW.js SDK中并添加执行文件权限
+mv $AppNw $nwSDK && echo 'Move success...' && chmod +x $nwSDK/app.nw && echo 'Add permission to succeed...'
+# 打包构建结束，将dev阶段的 nw，nw-builder 再放回 node_modules 依赖中
+mv ./nw/ ./nw-builder/ ./Markdown-Edit/node_modules/
+echo 'The program has been packaged，You：Run(y)，Structure(g)，Stop(n)？'
+read NAME
+if [ "${NAME}" == "y" ]; then
+  # 启动应用，这一步没将 nw 和 app.nw 合并
+  echo 'Starting up...'
+  cd $nwSDK && ./nw app.nw
+elif [ "${NAME}" == "g" ]; then
+  echo 'Being built...'
+  # 合并 nw 和 app.nw ，并删除app.nw源码
+  cd $nwSDK && cat nw app.nw > app && chmod +x app && rm -rf app.nw
+  echo 'Build and remove source package app.nw success，
+  To the SDK directory, execute the command sudo./app to run the program....'
+  echo "Or now：Yes(y) / No(n) Run ？"
+  read chios
+  if [ "${chios}" == "y" ]; then
+     # 启动程序
+     echo "Starting up..." && ./app
+  fi
+elif [ "${NAME}" == "n" ]; then
+  echo "Ok，Bye..."
+fi
+```
+
+然后执行
+```bash
+npm run online
+```
+脚本会为你自动打包程序的，请记住查看帮助文档！！！
 
 
