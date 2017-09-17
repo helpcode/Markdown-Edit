@@ -66,9 +66,13 @@ sudo npm install
 而使用`nw-builder`打包应用的时候它会根据你命令`nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/DBeditor/Markdown-Edit/` 去下载对应的`nw.js`的sdk，我提供的依赖包里面已经包含了一枚`0.25.1-sdk-linux64`的sdk，所以能节省不少的速度。
 
 
-> 下载地址：[Nw.js 依赖包]()
-> 下载地址：[nw-builder 依赖包]()
+> 下载地址：[Nw.js 依赖包]() [nw-builder 依赖包]()
 
+---
+
+<p style="color:#ff0000;font-size: 18px;font-weight: bold;">当然了，如果你不需要 `nw`在开发阶段预览网站在PC端的效果，和`nw-builder` 打包工具来打包，那么就不需要配置我上面说的那些东西。直接从`package.json`中把`nw`和`nw-builder`配置删除即可。你可以用我下面说的`builder.sh` shell 脚本的方式来打包</p>
+
+---
 
 安装解决依赖后打开`package.json`，`scripts`字段中提供有如下命令：
 
