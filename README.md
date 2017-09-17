@@ -51,6 +51,10 @@
 
 > 文档地址：[https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
 
+### Linux
+
+---
+
 1：下载源码
 
 ```bash
@@ -169,6 +173,26 @@ npm run online
 ```
 脚本会为你自动打包程序的，请记住查看帮助文档！！！
 
+
+### Windows / Mac
+
+---
+
+**1：打包方式1：普通文件 (推荐方式)**
+
+在`Windows`系统上,你可以将你的应用所有相关文件与`NW.js`执行文件放在相同文件夹下一起发送给你的用户。确保`nw.exe` 与 `package.json`在相同的文件夹（或目录）下。 或者你可以把你的应用的所有相关文件放在一个单独的文件夹下，并将该文件夹命名为`package.nw`，该文件夹需要放在与`nw.exe`相同的文件夹（或目录）中。
+
+在Mac系统中，新建名称为`app.nw`的文件夹，把你的应用所有相关文件放入其中，然后将`app.nw`文件夹放在`nwjs.app/Contents/Resources/`目录下即可。
+
+
+**2：打包方式2：ZIP压缩文件**
+
+你可以将应用的所有相关文件打成一个名为`package.nw`的压缩包。在`Windows`系统中，将`package.nw`与`NW.js`可执行文件放到相同目录即可。而在`Mac`系统中，则将`package.nw`放到`nwjs.app/Contents/Resources/`目录下。
+
+---
+
+**这里不要问`Linux`环境下为什么打包教程写的那么详细，因为这是我本机电脑环境，没有`Windows`和`Mac`系统，后期会虚拟机安装然后讲程序打包成安装包方式，尽情期待！**
+
 ## 1：关于我
 
 > 学的越多，才发现自己会的其实越少。
@@ -196,11 +220,11 @@ npm run online
 
 如果你对我感兴趣，想要了解并与我交流，可以通过以下方式联系到本人！
 
-- 1：QQ群：[540144097](http://shang.qq.com/wpa/qunwpa?idkey=1c684eb6c3d6b32ac50b0d179096ed64124b9db577add0319b7b1a96a0235656)
-- 2：QQ：2271608011
-- 3：Github：[helpcode](https://github.com/helpcode)
-- 4：旧版博客：[OldBlog](https://helpcode.github.io/OldBlog/)
-- 5：新浪博客：[danche365](http://blog.sina.com.cn/danche365)
+- 1：博客：[geekhelp](http://geekhelp.cn/)
+- 2：Github：[helpcode](https://github.com/helpcode)
+- 3：QQ群：[540144097](http://shang.qq.com/wpa/qunwpa?idkey=1c684eb6c3d6b32ac50b0d179096ed64124b9db577add0319b7b1a96a0235656)
+- 4：QQ：2271608011
+
 
 
 
