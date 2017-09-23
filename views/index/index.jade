@@ -1,4 +1,4 @@
-extends ./../layout
+extends ../layout
 
 block content
   link(rel='stylesheet', href='#{indexcss}')
@@ -14,6 +14,8 @@ block content
       textarea(id="texts" rows="3" oninput="methods.UpdateChange()" placeholder="DBeditor The Best MarkDown Editor")
       ul.menu-list-icons
         li
+            img(onclick="menu.FileClick()" src="#{menulisticons.file}")
+        li
             img(src="#{menulisticons.save}" )
         li
             img(src="#{menulisticons.newfile}")
@@ -25,6 +27,7 @@ block content
         li(style="display:none" id="exit")
             img(src="#{menulisticons.exit}" onclick="methods.exitFullscreen()")
 
+
         li(id="close")
             img(onclick="menu.CloseClick()" src="#{menulisticons.close}")
         li(id="forward")
@@ -32,8 +35,23 @@ block content
         li
             img(onclick="menu.DeletClick()" src="#{menulisticons.delete}")
 
+
+
+
     .main-right.col-md-6.col-sm-6.col-xs-6.clearPadding
       div(id='show')
+
+    div(id="menu-left" class="menu-show")
+        p 文章列表
+          img(src="/images/menulist.png" class="menu-icons")
+        ul
+            li
+               a() 测试
+
+            li
+                a() 测试
+            li
+                a() 测试
 
   script(type='text/javascript').
       methods.changeDivHeight();

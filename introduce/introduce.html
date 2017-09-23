@@ -99,7 +99,7 @@
         }
 
         .bloc-lg {
-            padding: 150px 50px;
+            padding: 150px 50px 10px 50px;
         }
 
         .mg-md {
@@ -131,6 +131,11 @@
             display: inline-block;
             font-size: 20px;
             color: rgba(0, 0, 0, .5);
+        }
+        .footer{
+            padding-top: 60px;
+            font-size: 1.4rem;
+            color: rgba(0, 0, 0, .5)
         }
     </style>
 </head>
@@ -288,20 +293,35 @@
 
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-xs-12">
+            <p class="text-center footer">
+                Copyright © 2016 <a href="http://geekhelp.cn" target="_blank">Bmy</a>. All rights reserved.
+            </p>
+        </div>
+    </div>
 </div>
 
 
 <script>
     var parser = new UAParser();
     (function (os) {
-        document.querySelector('#downapplication').
-            innerText = 'Download ' + os;
+        var donwhref = document.querySelector('#downapplication');
+            donwhref.innerText = 'Download ' + os.ver;
+            donwhref.href = os.down;
     })((function(n){
-        if (n == 'Windows')  return 'windows';
-        if (n == 'Mac OS')   return 'macosx';
-        if (n == 'Linux')    return  'linux';
+        if (n.name == 'Windows')  return {
+            ver: n.name + ' ' + n.version,
+            down: 'https://github.com/helpcode/DBeditor/releases/download/v1.2/DBeditor-v1.2-WIndows_64.7z'
+        };
+        if (n.name == 'Mac OS')   return 'macosx';
+        if (n.name == 'Linux')    return  {
+            ver: n.name + ' ' + n.version,
+            down: 'https://github.com/helpcode/DBeditor/releases/download/v1.2/DBeditor-v1.2-linux_64.7z'
+        };
         return null;
-    })(parser.getResult().os.name))
+    })(parser.getResult().os))
 </script>
 </body>
 

@@ -83,7 +83,63 @@
 #exit ,
 #full,
 #forward,
-#close{
+#close,
+#file{
     float: right;
     margin-right: 15px;
 }
+
+}
+.menu-show p{
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 16px;
+    width: 100%;
+    background: #ebebeb;
+    display: block;
+    float: left;
+    padding: 15px 0 15px 20px;
+
+}
+.menu-icons{
+.menu-show{
+    display: none;
+    width: 20%;
+    position: fixed;
+    color: #a2a2a2;
+    right: 0;
+    background: #fff;
+    box-shadow: 2px 8px 19px #9e9e9e;
+    float: left;
+}
+.menu-show ul{
+    margin: 0;
+    padding: 54px 0 10px 20px;
+}
+.menu-show ul li{
+    margin-bottom: 10px;
+    padding: 5px 0 5px 29px;
+    list-style: none;
+    border-bottom: 1px solid #f4f4f4;
+    background: url("/images/menu-file.png") no-repeat left;
+    -webkit-transition: all 0.3s ease-in 0.1s;
+    -moz-transition: all 0.3s ease-in 0.1s;
+    -ms-transition: all 0.3s ease-in 0.1s;
+    -o-transition: all 0.3s ease-in 0.1s;
+    transition: all 0.3s ease-in 0.1s;
+}
+.menu-show ul li:hover{
+    padding-left: 40px;
+}
+.menu-show ul li a{
+    color: #c2c2c2;
+    height: 34px;
+    width: 100%;
+    line-height: 34px;
+    display: inline-block;
+}
+
+/*.hidden-menu{*/
+    /*display: none;*/
+    /*right: -273px !important;*/
+/*}*/

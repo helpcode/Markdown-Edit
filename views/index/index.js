@@ -4,8 +4,11 @@
  */
 class BaseUtils{
     constructor(){
+        // 文章目录菜单的隐藏展示
+        this.menu = true;
         this.show = $('#show');
         this.texts = $('#texts');
+        this.menu = $('#menu-left');
     }
 
     //监听用户输入实时预览视图
@@ -18,10 +21,14 @@ class BaseUtils{
     //监听页面变化(全屏，放大，缩小，微调)实时更改编辑，预览区域高度
     changeDivHeight(){
         var h = document.documentElement.clientHeight;//获取页面可见高度
+        new MenuClick().menu.css("min-height", h);
+        new MenuClick().menu.css("max-height", h);
+
         new MenuClick().show.css("min-height", h);
         new MenuClick().show.css("max-height", h);
         new MenuClick().texts.css("min-height", h -36);
         new MenuClick().texts.css("max-height", h -36);
+
     }
     //全屏，响应子类监听的快捷键操作，底部按钮操作
     launchFullScreen (element) {
@@ -174,6 +181,32 @@ class BaseUtils{
         });
 
     }
+
+    EncryptedBinary(str){
+        var total2str = "";
+        for (var i = 0; i < str.length; i++) {
+            var num10 = str.charCodeAt(i);
+            var str2 = num10.toString(2);
+            if( total2str == "" ){
+                total2str = str2;
+            }else{
+                total2str = total2str + " " + str2;
+            }
+        }
+
+        return total2str;
+    }
+
+    //开启关闭右侧文件列表
+    OffMenu(){
+        if(this.menu){
+            $('#menu-left').show(100);
+            this.menu = false;
+        }else {
+            $('#menu-left').hide(100);
+            this.menu = true;
+        }
+    }
 }
 
 /**
@@ -203,7 +236,7 @@ class KeyClick extends BaseUtils{
     }
     //监听ctrl-s 保存笔记
     save(){
-        keymage('ctrl-s', function() {
+        keymage('ctrl-s', () => {
             if($('#texts').val() == null || $('#texts').val() === ''){
                 $.toast({
                     heading: '文章内容为空',
@@ -217,11 +250,77 @@ class KeyClick extends BaseUtils{
                 });
 
             }else {
-                swal({
-                    title: '温馨提示',
-                    text: '文章已经保存成功啦',
-                    timer: 2000,
+
+                $.ajax({
+                    type: 'POST',
+                    dataType: "json",
+                    url: '/api/v1.1/file',
+                    data: {
+                        value: this.EncryptedBinary(new MenuClick().texts.val())
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if(data.result == "FileAlreadyExists"){
+                            swal({
+                                title: '抱歉',
+                                text: '文件已经存在',
+                                timer: 2000
+                            })
+                        }else {
+                            $.toast({
+                                heading: '恭喜',
+                                text: '文件保存成功',
+                                icon: 'success',
+                                loader: true,        // Change it to false to disable loader
+                                loaderBg: '#64bb2c',  // To change the background
+                                position: 'top-right',
+                                bgColor: '#78d903',
+                                textColor: 'white'
+                            });
+                        }
+                    },
+                    error: function(xhr) {
+                        console.log(xhr)
+                    }
+
                 });
+
+
+
+
+                // swal({
+                //     title: '输入文件名',  //标题
+                //     input: 'text',
+                //     type: 'question',
+                //     showCancelButton: true,
+                //     confirmButtonText: 'Submit',                //同上，重复的我就不注释了哈~
+                //     showLoaderOnConfirm: true,
+                //     preConfirm: (name) => {               //功能执行前确认操作，支持function
+                //         return new Promise((resolve, reject) => {
+                //             setTimeout(() => {                 //添加一个时间函数，在俩秒后执行，这里可以用作异步操作数据
+                //                 if (name === '') {  //这里的意思是：如果输入的值等于'taken@example.com',数据已存在，提示信息
+                //                     reject('文件名不能为空')                  //提示信息
+                //                 } else {
+                //                     resolve()                           //方法出口
+                //                 }
+                //             }, 1000)
+                //         })
+                //     },
+                //     allowOutsideClick: false
+                // }).then((name) => {
+                //
+                //
+                //
+                // });
+
+
+
+
+                // swal({
+                //     title: '温馨提示',
+                //     text: '文章已经保存成功啦',
+                //     timer: 2000,
+                // });
             }
             return false;
         });
@@ -262,14 +361,15 @@ class KeyClick extends BaseUtils{
             return false;
         });
     }
-    //监听alt-2 前进
-    // Forward(){
-    //     keymage('alt-2', () => {
-    //         //alert("launchFullScreen!");
-    //         this.forward();
-    //         return false;
-    //     });
-    // }
+    //监听alt-o
+    OpenMenu(){
+        keymage('alt-o', () => {
+            this.OffMenu();
+            return false;
+        });
+    }
+
+
     //导出快捷键操作 外部调用这个方法即可
     control(){
         this.alt();
@@ -281,6 +381,7 @@ class KeyClick extends BaseUtils{
         this.Quit();
         this.Help();
         this.Clear();
+        this.OpenMenu();
         this.changeDivHeight();
     }
 }
@@ -292,22 +393,32 @@ class KeyClick extends BaseUtils{
 class MenuClick extends BaseUtils{
     constructor(){
         super();
+
     }
 
+    //帮助
     HelpClick(){
         this.HelpDomHtml();
     }
 
+    //清空编辑区内容
     DeletClick(){
         this.ClearEditor()
     }
 
+    //关闭软件
     CloseClick(){
         this.CloseWindows();
     }
 
+    //返回上一级
     BackClick(){
         this.Back();
+    }
+
+    //文件菜单
+    FileClick(){
+        this.OffMenu();
     }
 }
 

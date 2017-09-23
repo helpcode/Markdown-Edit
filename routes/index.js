@@ -2,6 +2,8 @@ const PublicHead = require('./../util/public');
 
 
 PublicHead.router.get('/index', function(req, res, next) {
+    console.log( PublicHead.yml.indexPage);
+  //PublicHead.file.MkDir();
   res.render(PublicHead.yml.indexPage.router, PublicHead.yml.indexPage);
 });
 
