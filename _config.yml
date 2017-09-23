@@ -21,8 +21,6 @@ indexPage:
    exit: /images/exit.png
    forwar: /images/qinjing.png
    delete: /images/delete.png
-   close: /images/ios-close.png
-   file: /images/file.png
 
 
 welcomePage:

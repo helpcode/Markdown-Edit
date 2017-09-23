@@ -9,6 +9,7 @@ class BaseUtils{
         this.show = $('#show');
         this.texts = $('#texts');
         this.menu = $('#menu-left');
+        this.props = $('#blank');
     }
 
     //监听用户输入实时预览视图
@@ -21,8 +22,17 @@ class BaseUtils{
     //监听页面变化(全屏，放大，缩小，微调)实时更改编辑，预览区域高度
     changeDivHeight(){
         var h = document.documentElement.clientHeight;//获取页面可见高度
+
+        // 默认隐藏关闭遮罩的按钮
+        $('#close-props').hide();
+
+        //左侧抽屉菜单
         new MenuClick().menu.css("min-height", h);
         new MenuClick().menu.css("max-height", h);
+
+        // 图层遮挡
+        new MenuClick().props.css("min-height", h);
+        new MenuClick().props.css("max-height", h);
 
         new MenuClick().show.css("min-height", h);
         new MenuClick().show.css("max-height", h);
@@ -84,31 +94,34 @@ class BaseUtils{
 
         let htmlDom = '<div class="row" style="padding-top: 30px">\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        Ctrl+P <br> 新建笔记\n' +
             '    </div>\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        Alt+1 <br> 进入全屏\n' +
             '    </div>\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        ESC <br> 退出全屏\n' +
             '    </div>\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        Ctrl+S <br> 保存笔记\n' +
             '    </div>\n' +
             '</div>\n' +
             '<div class="row" style="padding-top: 18px">\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        Ctrl+Q <br> 关闭软件\n' +
             '    </div>\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        Ctrl+H <br> 帮助页面\n' +
             '    </div>\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        Ctrl+D <br> 清除内容\n' +
             '    </div>\n' +
             '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
-            '        ctrl+p <br> 新建页面\n' +
+            '        Alt-3 <br> 后退一步\n' +
             '    </div>\n' +
+            '    <div class="text-center col-md-3 col-sm-3 col-xs-3">\n' +
+            '        Alt-O <br> 抽屉菜单\n' +
+            '    </div>\n'+
             '</div>';
 
         swal({
@@ -207,6 +220,11 @@ class BaseUtils{
             this.menu = true;
         }
     }
+
+    // 关闭遮罩
+    CloseProps(){
+        $('#blank').hide(1000);
+    }
 }
 
 /**
@@ -219,7 +237,6 @@ class KeyClick extends BaseUtils{
     }
     //监听alt-1 进入全屏
     alt(){
-
         keymage('alt-1', () => {
             //alert("launchFullScreen!");
             this.launchFullScreen(document.documentElement);
@@ -328,6 +345,9 @@ class KeyClick extends BaseUtils{
     //ctrl-p 新建笔记文件
     NewFile(){
         keymage('ctrl-p', function() {
+            //新建文件后显示关闭遮罩的按钮
+            $('#close-props').show(1000);
+
             alert("新建笔记文件");
             return false;
         });
@@ -361,7 +381,7 @@ class KeyClick extends BaseUtils{
             return false;
         });
     }
-    //监听alt-o
+    //监听alt-o，打开侧边栏
     OpenMenu(){
         keymage('alt-o', () => {
             this.OffMenu();
@@ -420,6 +440,11 @@ class MenuClick extends BaseUtils{
     FileClick(){
         this.OffMenu();
     }
+
+    PropsHide(){
+        this.CloseProps();
+    }
+
 }
 
 //监听窗口大小变化，重新设置页面高度

@@ -89,7 +89,6 @@
     margin-right: 15px;
 }
 
-}
 .menu-show p{
     text-align: center;
     letter-spacing: 4px;
@@ -102,6 +101,8 @@
 
 }
 .menu-icons{
+    float: left;
+}
 .menu-show{
     display: none;
     width: 20%;
@@ -138,7 +139,35 @@
     line-height: 34px;
     display: inline-block;
 }
-
+.write{
+    width: 80px;
+    height: 80px;
+    margin: 25px auto;
+}
+.write-div{
+    background: #ebebeb;
+}
+.prop-blank{
+    position: fixed;
+    left: 0;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    background: rgba(73, 73, 73, 0.77);
+}
+.prop-blank img{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+.prop-blank .tips{
+    line-height: 35px;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    letter-spacing: 3px;
+    margin: 22% auto 18% auto;
+    color: #dbdbdb;
+    font-size: 18px;
+}
 /*.hidden-menu{*/
     /*display: none;*/
     /*right: -273px !important;*/
