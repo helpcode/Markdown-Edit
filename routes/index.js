@@ -1,14 +1,12 @@
-const PublicHead = require('./../util/public');
+const PublicHead = require('../util/import');
 
 
 PublicHead.router.get('/index', function(req, res, next) {
-    console.log( PublicHead.yml.indexPage);
-  //PublicHead.file.MkDir();
-  res.render(PublicHead.yml.indexPage.router, PublicHead.yml.indexPage);
+  res.render(PublicHead.config.IndexPage.router, PublicHead.config.IndexPage);
 });
 
 PublicHead.router.get('/welcome', function(req, res, next) {
-    res.render(PublicHead.yml.welcomePage.router, PublicHead.yml.welcomePage);
+    res.render(PublicHead.config.welcomePage.router, PublicHead.config.welcomePage);
 });
 
 PublicHead.router.get('/introduce' , function (req , res ,next) {

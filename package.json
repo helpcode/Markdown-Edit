@@ -1,0 +1,65 @@
+{
+  "app_name": "Markdown-Edit",
+  "main": "http://localhost:3000/welcome",
+  "name": "DBeditor",
+  "node-main": "./bin/www",
+  "nodejs": true,
+  "private": true,
+  "scripts": {
+    "dev": "nw /home/bmy/桌面/DBeditor/Markdown-Edit",
+    "node": "NODE_ENV=default node-dev ./bin/www",
+    "nw": "nw",
+    "prod": "nwbuild --platforms linux64 --buildDir dist/ /home/bmy/桌面/Markdown-Edit/",
+    "online": "./../builder.sh",
+    "docs": "docute ./docs --out-dir dist --source-maps --presets env"
+  },
+  "version": "1.3.0",
+  "dependencies": {
+    "config-lite": "^2.1.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "marked": "^0.3.6",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "nw": "^0.25.0",
+    "nw-builder": "^3.4.1"
+  },
+  "webkit": {
+    "double_tap_to_zoom_enabled": false,
+    "plugin": true,
+    "page-cache": true
+  },
+  "window": {
+    "frame": true,
+    "height": 600,
+    "width": 1200,
+    "icon": "markdown.png",
+    "id": "Markdown-Edit",
+    "min_height": 500,
+    "min_width": 1100,
+    "position": "center",
+    "show_in_taskbar": true,
+    "title": "DBeditor",
+    "toolbar": true,
+    "visible_on_all_workspaces": true,
+    "fullscreen": false
+  },
+  "maintainers": [
+    {
+      "name": "编码猿",
+      "email": "2271608011@qq.com",
+      "web": "http://geekhelp.cn/"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/helpcode/DBeditor.git"
+    }
+  ]
+}

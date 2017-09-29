@@ -1,0 +1,9 @@
+{
+    "title": "DBeditor | 人脸识别",
+    "API":{
+        "detect": "https://api-cn.faceplusplus.com/facepp/v3/detect",
+        "api_key": "xfXREfL_pXgnqK2GedOunNPN2MFYSsPR",
+        "api_secret": "x0PGyvHoVSjX19KlkjH1Ct7Md5wxz8aV",
+        "return_attributes": "gender,age,smiling,glass,emotion,ethnicity,beauty,mouthstatus,skinstatus"
+    }
+}

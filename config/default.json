@@ -1,0 +1,714 @@
+{
+  "IndexPage": {
+    "title": "开始写作 | 最简洁的Markdown编辑器",
+    "router": "index/index",
+    "indexcss": "/index/index.css",
+    "markedscript": "https://cdn.bootcss.com/marked/0.3.6/marked.min.js",
+    "highlightscript": "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js",
+    "menulist": [
+      {
+        "icon": "/images/save.png",
+        "id": "",
+        "tips": "保存修改",
+        "function": "menu.SaveFileClick()"
+      },
+      {
+        "icon": "/images/xj.png",
+        "id": "",
+        "tips": "新建笔记",
+        "function": "menu.NewFileClick()"
+      },
+      {
+        "icon": "/images/biaoq.png",
+        "id": "edit-emoji",
+        "tips": "表情",
+        "function": "menu.EmojiClick()"
+      },
+      {
+        "icon": "/images/help.png",
+        "id": "",
+        "tips": "快捷键提示",
+        "function": "menu.HelpClick()"
+      },
+      {
+        "icon": "/images/full.png",
+        "id": "full",
+        "tips": "全屏写作",
+        "function": "methods.launchFullScreen(document.documentElement)"
+      },
+      {
+        "icon": "/images/exit.png",
+        "id": "exit",
+        "tips": "退出全屏",
+        "function": "methods.exitFullscreen()"
+      },
+      {
+        "icon": "/images/qinjing.png",
+        "id": "forward",
+        "tips": "上一步",
+        "function": "menu.BackClick()"
+      },
+      {
+        "icon": "/images/delete.png",
+        "id": "",
+        "tips": "清空内容",
+        "function": "menu.DeletClick()"
+      }
+    ],
+    "Other": {
+      "propsimg": "/images/markdown.png",
+      "propstitle": "提示：请先按快捷键 Ctrl+p 新建笔记，输入笔记名后回车。即可开始享受愉快的写作过程！"
+    },
+    "emojilist": {
+      "tabText": [
+        {
+          "href": "#example1-tab1",
+          "tabtext": "表情"
+        },
+        {
+          "href": "#example1-tab2",
+          "tabtext": "动物"
+        },
+        {
+          "href": "#example1-tab3",
+          "tabtext": "物体"
+        },
+        {
+          "href": "#example1-tab4",
+          "tabtext": "其他"
+        }
+      ],
+      "tab1Item": [
+        {
+          "icons": "smile"
+        },
+        {
+          "icons": "laughing"
+        },
+        {
+          "icons": "blush"
+        },
+        {
+          "icons": "smiley"
+        },
+        {
+          "icons": "relaxed"
+        },
+        {
+          "icons": "smirk"
+        },
+
+        {
+          "icons": "heart-eyes"
+        },
+        {
+          "icons": "kissing-heart"
+        },
+        {
+          "icons": "kissing-closed-eyes"
+        },
+        {
+          "icons": "flushed"
+        },
+        {
+          "icons": "relieved"
+        },
+        {
+          "icons": "satisfied"
+        },
+
+        {
+          "icons": "grin"
+        },
+        {
+          "icons": "wink"
+        },
+        {
+          "icons": "stuck-out-tongue-winking-eye"
+        },
+        {
+          "icons": "stuck-out-tongue-closed-eyes"
+        },
+        {
+          "icons": "grinning"
+        },
+        {
+          "icons": "kissing"
+        },
+        {
+          "icons": "kissing-smiling-eyes"
+        },
+        {
+          "icons": "stuck-out-tongue"
+        },
+        {
+          "icons": "sleeping"
+        },
+
+        {
+          "icons": "worried"
+        },
+        {
+          "icons": "frowning"
+        },
+        {
+          "icons": "anguished"
+        },
+        {
+          "icons": "open-mouth"
+        },
+        {
+          "icons": "grimacing"
+        },
+        {
+          "icons": "confused"
+        },
+        {
+          "icons": "hushed"
+        },
+        {
+          "icons": "expressionless"
+        },
+        {
+          "icons": "unamused"
+        },
+        {
+          "icons": "sweat-smile"
+        },
+        {
+          "icons": "sweat"
+        },
+        {
+          "icons": "weary"
+        },
+        {
+          "icons": "pensive"
+        },
+        {
+          "icons": "disappointed"
+        },
+        {
+          "icons": "confounded"
+        },
+        {
+          "icons": "fearful"
+        },
+        {
+          "icons": "cold-sweat"
+        },
+        {
+          "icons": "persevere"
+        },
+
+        {
+          "icons": "cry"
+        },
+        {
+          "icons": "sob"
+        },
+        {
+          "icons": "joy"
+        },
+        {
+          "icons": "astonished"
+        },
+        {
+          "icons": "scream"
+        },
+        {
+          "icons": "tired-face"
+        },
+        {
+          "icons": "angry"
+        },
+        {
+          "icons": "rage"
+        },
+        {
+          "icons": "triumph"
+        },
+        {
+          "icons": "sleepy"
+        },
+        {
+          "icons": "yum"
+        },
+        {
+          "icons": "mask"
+        },
+        {
+          "icons": "sunglasses"
+        },
+        {
+          "icons": "dizzy-face"
+        },
+        {
+          "icons": "imp"
+        },
+        {
+          "icons": "smiling-imp"
+        },
+        {
+          "icons": "neutral-face"
+        },
+        {
+          "icons": "no-mouth"
+        },
+        {
+          "icons": "innocent"
+        },
+        {
+          "icons": "alien"
+        },
+        {
+          "icons": "yellow-heart"
+        },
+        {
+          "icons": "blue-heart"
+        },
+        {
+          "icons": "purple-heart"
+        },
+        {
+          "icons": "heart"
+        },
+        {
+          "icons": "broken-heart"
+        },
+        {
+          "icons": "two-hearts"
+        },
+        {
+          "icons": "cupid"
+        },
+
+        {
+          "icons": "zzz"
+        },
+        {
+          "icons": "dash"
+        },
+        {
+          "icons": "musical-note"
+        },
+        {
+          "icons": "fire"
+        },
+        {
+          "icons": "thumbsup"
+        },
+        {
+          "icons": "thumbsdown"
+        },
+        {
+          "icons": "punch"
+        },
+        {
+          "icons": "v"
+        },
+        {
+          "icons": "clap"
+        },
+        {
+          "icons": "pray"
+        },
+        {
+          "icons": "muscle"
+        },
+        {
+          "icons": "speak-no-evil"
+        },
+        {
+          "icons": "see-no-evil"
+        },
+        {
+          "icons": "kiss"
+        },
+        {
+          "icons": "skull"
+        },
+        {
+          "icons": "love-letter"
+        },
+        {
+          "icons": "poop"
+        },
+        {
+          "icons": "girl"
+        },
+        {
+          "icons": "boy"
+        },
+        { "icons": "cherry-blossom" },
+        { "icons": "rose" },
+        { "icons": "four-leaf-clover" },
+        { "icons": "maple-leaf" },
+        { "icons": "fallen-leaf" },
+        { "icons": "sunflower" },
+        { "icons": "ear-of-rice" },
+        { "icons": "shell" },
+        { "icons": "deciduous-tree" }
+      ],
+      "tab2Item": [
+        { "icons": "sunny" },
+        { "icons": "umbrella" },
+        { "icons": "cloud" },
+        { "icons": "snowflake" },
+        { "icons": "snowman" },
+        { "icons": "zap" },
+        { "icons": "cyclone" },
+        { "icons": "cat" },
+        { "icons": "dog" },
+        { "icons": "mouse" },
+        { "icons": "rabbit" },
+        { "icons": "wolf" },
+        { "icons": "frog" },
+        { "icons": "tiger" },
+        { "icons": "koala" },
+        { "icons": "bear" },
+        { "icons": "pig" },
+        { "icons": "pig-nose" },
+        { "icons": "cow" },
+        { "icons": "boar" },
+        { "icons": "monkey-face" },
+        { "icons": "monkey" },
+        { "icons": "horse" },
+        { "icons": "camel" },
+        { "icons": "sheep" },
+        { "icons": "elephant" },
+        { "icons": "panda-face" },
+        { "icons": "snake" },
+        { "icons": "chicken" },
+        { "icons": "bug" },
+        { "icons": "beetle" },
+        { "icons": "octopus" },
+        { "icons": "tropical-fish" },
+        { "icons": "whale" },
+        { "icons": "cow2" },
+        { "icons": "rabbit2" },
+        { "icons": "dragon-face" },
+        { "icons": "crocodile" },
+        { "icons": "paw-prints" },
+        { "icons": "dromedary-camel" },
+        { "icons": "bouquet" },
+        { "icons": "poodle" },
+        { "icons": "turtle" },
+        { "icons": "ant" },
+        { "icons": "partly-sunny"},
+        { "icons": "crescent-moon"},
+        { "icons": "earth-asia"},
+        { "icons": "full-moon-with-face"},
+        { "icons": "first-quarter-moon-with-face"},
+        { "icons": "mushroom"},
+        { "icons": "globe-with-meridians"},
+        { "icons": "dolphin"},
+        { "icons": "rooster"},
+        { "icons": "new-moon-with-face"},
+        { "icons": "octocat"},
+        { "icons": "octocat"}
+      ],
+      "tab3Item": [
+        { "icons": "gift-heart" },
+        { "icons": "school-satchel" },
+        { "icons": "mortar-board" },
+        { "icons": "wind-chime" },
+        { "icons": "jack-o-lantern" },
+        { "icons": "ghost" },
+        { "icons": "santa" },
+        { "icons": "christmas-tree" },
+        { "icons": "gift" },
+        { "icons": "bell" },
+        { "icons": "tada" },
+        { "icons": "balloon" },
+        { "icons": "cd" },
+        { "icons": "floppy-disk" },
+        { "icons": "camera" },
+        { "icons": "video-camera" },
+        { "icons": "movie-camera" },
+        { "icons": "computer" },
+        { "icons": "iphone" },
+        { "icons": "phone" },
+        { "icons": "sound" },
+        { "icons": "watch" },
+        { "icons": "mag-right" },
+        { "icons": "unlock" },
+        { "icons": "key" },
+        { "icons": "bulb" },
+        { "icons": "email" },
+        { "icons": "mailbox" },
+        { "icons": "bath" },
+        { "icons": "wrench" },
+        { "icons": "moneybag" },
+        { "icons": "credit-card" },
+        { "icons": "e-mail" },
+        { "icons": "inbox-tray" },
+        { "icons": "package" },
+        { "icons": "door" },
+        { "icons": "smoking" },
+        { "icons": "bomb" },
+        { "icons": "gun" },
+        { "icons": "hocho" },
+        { "icons": "pill" },
+        { "icons": "page-facing-up" },
+        { "icons": "calendar" },
+        { "icons": "open-file-folder" },
+        { "icons": "scissors" },
+        { "icons": "pushpin" },
+        { "icons": "paperclip" },
+        { "icons": "triangular-ruler" },
+        { "icons": "microscope" },
+        { "icons": "basketball" },
+        { "icons": "soccer" },
+        { "icons": "bicyclist" },
+        { "icons": "swimmer" },
+        { "icons": "hearts" },
+        { "icons": "gem" },
+        { "icons": "ring" },
+        { "icons": "trophy" },
+        { "icons": "video-game" },
+        { "icons": "game-die" },
+        { "icons": "dart" },
+        { "icons": "mahjong" },
+        { "icons": "clapper" },
+        { "icons": "memo" },
+        { "icons": "art" },
+        { "icons": "microphone" },
+        { "icons": "high-heel" },
+        { "icons": "lipstick" },
+        { "icons": "shirt" },
+        { "icons": "necktie" },
+        { "icons": "dress" },
+        { "icons": "bikini" },
+        { "icons": "ribbon" },
+        { "icons": "crown" },
+        { "icons": "womans-hat" },
+        { "icons": "closed-umbrella" },
+        { "icons": "handbag" },
+        { "icons": "eyeglasses" },
+        { "icons": "coffee" },
+        { "icons": "baby-bottle" },
+        { "icons": "beer" },
+        { "icons": "tropical-drink" },
+        { "icons": "fork-and-knife" },
+        { "icons": "hamburger" },
+        { "icons": "fries" },
+        { "icons": "meat-on-bone" },
+        { "icons": "fried-shrimp" },
+        { "icons": "ramen" },
+        { "icons": "rice-ball" },
+        { "icons": "rice" },
+        { "icons": "bread" },
+        { "icons": "icecream" },
+        { "icons": "cookie" },
+        { "icons": "candy" },
+        { "icons": "lollipop" },
+        { "icons": "apple" },
+        { "icons": "tangerine" },
+        { "icons": "lemon" },
+        { "icons": "cherries" },
+        { "icons": "grapes" },
+        { "icons": "watermelon" },
+        { "icons": "strawberry" },
+        { "icons": "peach" },
+        { "icons": "banana" },
+        { "icons": "pear" },
+        { "icons": "pineapple" },
+        { "icons": "sweet-potato" },
+        { "icons": "eggplant" },
+        { "icons": "tomato" },
+        { "icons": "corn" }
+      ],
+      "tab4Item": [
+        { "icons": "house" },
+        { "icons": "love-hotel" },
+        { "icons": "sailboat" },
+        { "icons": "rocket" },
+        { "icons": "airplane" },
+        { "icons": "tram" },
+        { "icons": "bike" },
+        { "icons": "blue-car" },
+        { "icons": "oncoming-automobile" },
+        { "icons": "car" },
+        { "icons": "vertical-traffic-light" },
+        { "icons": "warning" },
+        { "icons": "construction" },
+        { "icons": "checkered-flag" },
+        { "icons": "hotsprings" },
+        { "icons": "jp" },
+        { "icons": "kr" },
+        { "icons": "cn" },
+        { "icons": "us" },
+        { "icons": "fr" },
+        { "icons": "es" },
+        { "icons": "it" },
+        { "icons": "ru" },
+        { "icons": "gb" },
+        { "icons": "de" },
+        { "icons": "taxi" },
+        { "icons": "bullettrain-side" },
+        { "icons": "atm" },
+        { "icons": "crossed-flags" },
+        { "icons": "moyai" },
+        { "icons": "tent" },
+        { "icons": "anchor" },
+        { "icons": "oncoming-bus" },
+        { "icons": "fire-engine" },
+        { "icons": "rotating-light" },
+        { "icons": "round-pushpin" },
+        { "icons": "slot-machine" },
+        { "icons": "house-with-garden" },
+        { "icons": "city-sunset" },
+        { "icons": "european-post-office" },
+        { "icons": "city-sunrise" },
+        { "icons": "tokyo-tower" },
+        { "icons": "oncoming-police-car" },
+        { "icons": "beginner" },
+        { "icons": "busstop" },
+        { "icons": "mountain-railway" },
+        { "icons": "busstop" },
+        { "icons": "zero" },
+        { "icons": "one" },
+        { "icons": "two" },
+        { "icons": "three" },
+        { "icons": "four" },
+        { "icons": "five" },
+        { "icons": "six" },
+        { "icons": "seven" },
+        { "icons": "eight" },
+        { "icons": "nine" },
+        { "icons": "keycap-ten" },
+        { "icons": "hash" },
+        { "icons": "arrow-backward" },
+        { "icons": "arrow-down" },
+        { "icons": "arrow-forward" },
+        { "icons": "arrow-left" },
+        { "icons": "arrow-lower-left" },
+        { "icons": "arrow-lower-right" },
+        { "icons": "arrow-right" },
+        { "icons": "arrow-up" },
+        { "icons": "arrow-upper-left" },
+        { "icons": "arrow-upper-right" },
+        { "icons": "u5272" },
+        { "icons": "u5408" },
+        { "icons": "u6e80" },
+        { "icons": "u6709" },
+        { "icons": "u55b6" },
+        { "icons": "u7121" },
+        { "icons": "u7981" },
+        { "icons": "secret" },
+        { "icons": "ideograph-advantage" },
+        { "icons": "congratulations" },
+        { "icons": "no-entry" },
+        { "icons": "children-crossing" },
+        { "icons": "recycle" },
+        { "icons": "x" },
+        { "icons": "interrobang" },
+        { "icons": "bangbang" },
+        { "icons": "o" },
+        { "icons": "heavy-minus-sign" },
+        { "icons": "heavy-multiplication-x" },
+        { "icons": "heavy-plus-sign" },
+        { "icons": "heavy-division-sign" },
+        { "icons": "heavy-check-mark" },
+        { "icons": "white-check-mark" },
+        { "icons": "100" },
+        { "icons": "red-circle" },
+        { "icons": "black-circle" },
+        { "icons": "white-circle" },
+        { "icons": "tm"},
+        { "icons": "part-alternation-mark"}
+      ]
+    }
+  },
+  "welcomePage": {
+    "title": "欢迎 | 最简洁的Markdown编辑器",
+    "logo": "../images/markdown.png",
+    "description": "DBeditor The Best MarkDown Editor",
+    "router": "welcome/welcome",
+    "welcomecss": "/welcome/welcome.css",
+    "ribbonscript": "http://okkzzhtds.bkt.clouddn.com/ribbon.min.js",
+    "menulist": [
+      {
+        "title": "Start",
+        "href": "/index",
+        "target": "_top"
+      },
+      {
+        "title": "Face",
+        "href": "/module/face",
+        "target": "_top"
+      },
+      {
+        "title": "introduce",
+        "href": "/introduce",
+        "target": "_blank"
+      },
+      {
+        "title": "Help",
+        "href": "/help",
+        "target": "_top"
+      }
+    ]
+  },
+  "helpPage": {
+    "title": "帮助 | 最简洁的Markdown编辑器",
+    "router": "help/help",
+    "helpcss": "/help/help.css",
+    "problemtitle": "有何指教 ？",
+    "BaseUse": {
+      "itemtitle": "1：基础使用",
+      "itemtdec": "首先为了更加专注于文章内容的编写，借鉴Vim风格，本应用没有所谓的菜单操作页面，主要是通过快捷键来操作，具体请看下面的快捷键列表：",
+      "listitem": [
+        {
+          "Key": "Alt + E",
+          "Value": "打开侧边栏"
+        },
+        {
+          "Key": "Alt + 3",
+          "Value": "后退一步"
+        },
+        {
+          "Key": "ESC",
+          "Value": "退出全屏"
+        },
+        {
+          "Key": "Alt + 1",
+          "Value": "进入全屏"
+        },
+        {
+          "Key": "Ctrl + S",
+          "Value": "文章写完后，即刻保存。"
+        },
+        {
+          "Key": "Alt + F",
+          "Value": "打开软件的帮助页面"
+        },
+        {
+          "Key": "Ctrl + Q",
+          "Value": "退出"
+        },
+        {
+          "Key": "Ctrl + P",
+          "Value": "新建笔记"
+        },
+        {
+          "Key": "Alt + D",
+          "Value": "清除页面内容"
+        },
+        {
+          "Key": "Alt + Z",
+          "Value": "表情菜单"
+        }
+      ]
+    },
+    "SaveNote": {
+      "itemtitle": "2：如何本地保存笔记？",
+      "itemtdec": "写完笔记后，直接快捷键 Ctrl + S 保存，然后打开应用所在目录的 “Note” 文件夹，你的所有笔记都保存在这里面，同时你可以把自己其他的“*.md”文件放到该文件夹中，程序将会自动读取文件并展示。"
+    },
+    "HelpMe": {
+      "itemtitle": "3：赞助我",
+      "itemtdec": "写个软件不容易，太苦太累，只是为了满足兴趣所以坚持写，何不打赏一块？",
+      "itemimg": "http://obl1kak28.bkt.clouddn.com/zhifubao.png"
+    }
+  }
+}

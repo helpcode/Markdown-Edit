@@ -1,0 +1,19 @@
+extends ../layout
+block content
+    link(rel='stylesheet', href='#{welcomecss}')
+
+    .main-body.container
+        .text-center
+            img(src='#{logo}' alt='markdown')
+            .row.col-md-12
+                .title
+                    h3  #{description}
+
+        .row.col-md-12.text-center
+            - var menu  = menulist
+            - for(var i=0; i< menu.length; i++){
+               a(href='#{menu[i].href}' target="#{menu[i].target}" class='next-md') #{menu[i].title}
+            - }
+
+
+    script(src="#{ribbonscript}", type='text/javascript')

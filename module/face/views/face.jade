@@ -1,0 +1,41 @@
+extends ../../../component/layout
+
+block content
+ link(rel='stylesheet', href='/face/views/face.css')
+ script(src='/face/views/face.js', type='text/javascript')
+
+
+
+ div(class="mdui-progress" id="load-progress")
+    div(class="mdui-progress-indeterminate")
+ .row
+  div(class="face-result mdui-ripple" id="jieguo")
+   .col-md-8.col-md-offset-2
+       i(id="showlow" class='twa twa-4x  twa-joy heart-eyes')
+       i(id="showeyes" class='twa twa-4x twa-heart-eyes heart-eyes')
+
+       img(src="http://geekhelp.cn/images/touxiang.jpg" id="face-logo" class="author-img")
+       h4(class="subtitle" id="age")
+       p(class="subtext" id="beauty")
+       div(class="subinfo" id="userinfo")
+       p(class="closeinfo" onclick="closeInfo()") X
+
+  .col-md-8.col-md-offset-2
+    div(class="mdui-textfield mdui-textfield-floating-label mdui-center valign")
+      label(class="mdui-textfield-label") Picture Url
+      input(id="textfield-input" class="mdui-textfield-input" onchange="PostYouData(this.value)" type="text" maxlength="160")
+
+  .col-md-8.col-md-offset-2
+      p.face-info Tips：需要提供一个自拍照的URL，例: http://image.3761.com/pic/55411432169574.jpg<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;程序会检测你的年龄，性别，人种，颜值，是否佩戴眼镜，健康程度，嘴巴是否闭合。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;检测的数据仅供参考娱乐，切勿较真哦！
+
+ script(type='text/javascript').
+     var h = document.documentElement.clientHeight;
+     $("#jieguo").css("min-height", h);
+     $("#jieguo").css("max-height", h);
+
+
+
+
+
+
+

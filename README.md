@@ -19,7 +19,8 @@
 
 ## 简介
 
-`DBeditor` 是一款跨平台的`MarkDown`编辑器，支持主流的`Linux` / `Mac` / `Windows` 等操作系统，在各个系统上具有统一优秀的表现力。界面设计采用简洁扁平的UI风格，去除繁琐复杂多余的菜单，借鉴`Linux`上著名的`Vim`编辑器键盘快捷键命令操作风格，让用更加专注于文章博客的编写。
+`DBeditor` 是一款跨平台的`MarkDown`编辑器，支持主流的`Linux` / `Mac` / `Windows` 等操作系统，在各个系统上具有统一优秀的表现力。界面设计采用简洁扁平大量留白的UI风格，去除繁琐复杂多余的菜单，同时参考`Linux`上著名`Vim`的键盘快捷键命令式操作风格，让用更加专注于文章博客的编写，同时支持丰富的表情插入，让文章更具有丰富多彩的表现力。
+
 
 
 > DBeditor名称的来源：我养了一条日天日地的黑色小泰迪，它名字叫大(D)宝(B)。哈哈...就是如此随意
@@ -27,18 +28,17 @@
 **项目地址：**
 
 - 1：源码地址：https://github.com/helpcode/DBeditor
-- 2：文档地址：https://helpcode.github.io/DBeditor/
-- 3：下载地址：https://github.com/helpcode/DBeditor/releases
-- 4：官网地址：http://xxxx.xxx.xx.xx/introduce(开发完成，还未部署服务器)
-- 5：网站地址：http://xxxx.xxx.xx.xx/welcome(开发完成，还未部署服务器)
+- 2：下载地址：https://github.com/helpcode/DBeditor/releases
+- 3：官网地址：http://localhost:3000/introduce(软件本地运行后，即可访问)
+- 4：网站地址：http://localhost:3000/welcome(软件本地运行后，即可访问)
  
  
 ## 截图欣赏
 
-先来看看下面这些截图吧，好让你为下面有点麻烦的配置过程增加点信心，界面还是很简洁的，特别喜欢这种简约扁平大量留白的UI设计！不要问为啥，就是喜欢。
+先来看看下面这些截图吧，好让你为下面有点麻烦的配置过程增加点信心，如果你不懂`Linux`，不懂前端`Nodejs`不懂开发都没关系，你这里可以下载我打包好的软件直接运行即可！
 
 <p align="center">
-    <img width="90%" height="90%" src="./public/images/home-js.png"/>
+    <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/home-js.png"/>
 </p>
 
 <p align="center">
@@ -52,16 +52,11 @@
  
 ## 安装构建
 
-骚年，文档记得一定要看，否则不会配置打包那我也没办法了，一定要看哦，相关技术点也要掌握！！
-
-> 文档地址：[https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
-
-
 1：下载源码
 
 ```bash
-sudo mkdir Markdown-Edit && sudo chmod 777 -R Markdown-Edit && cd Markdown-Edit
-sudo git clone https://github.com/helpcode/DBeditor.git
+sudo mkdir DBeditor && sudo chmod 777 -R DBeditor && cd DBeditor
+sudo git clone https://github.com/helpcode/Markdown-Edit.git
 sudo npm install
 ``` 
 
@@ -124,16 +119,16 @@ _当然了，如果你不需要 `nw`在开发阶段预览网站在PC端的效果
 
 > [https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
 
-如果你想使用我的脚本来自动打包，那需要注意的是我们之前用`sudo mkdir Markdown-Edit`创建了文件夹`Markdown-Edit`，这个文件夹里面除了放置项目源码`DBeditor`，和`DBeditor`同级的是`Nw.js`的 `SDK`，这里推荐下载这个SDK，原因在帮助文档里面写的很清楚，请仔细查看：
+如果你想使用我的脚本来自动打包，那需要注意的是我们之前用`sudo mkdir DBeditor`创建了文件夹，这个文件夹里面除了放置项目源码` Markdown-Edit`，和` Markdown-Edit`同级的是`Nw.js`的 `SDK`，这里推荐下载这个SDK，原因在帮助文档里面写的很清楚，请仔细查看：
 
 > [nwjs-v0.25.1-linux-x64.tar.gz](http://okkzzhtds.bkt.clouddn.com/nwjs-v0.25.1-linux-x64.tar.gz)
 
-下载解压后，放到`Markdown-Edit`文件夹下，然后也是在`Markdown-Edit`文件夹下创建`builder.sh`，具体目录层级和shell代码如下：
+下载解压后，放到`DBeditor`文件夹下，然后也是在`DBeditor`文件夹下创建`builder.sh`，具体目录层级和shell代码如下：
 
 **目录层级**
 ```text
-Markdown-Edit
- |--- DBeditor
+DBeditor
+ |--- Markdown-Edit
  |--- nwjs-v0.25.1-linux-x64
  |--- builder.sh
 ```
@@ -146,6 +141,7 @@ Markdown-Edit
 #!/bin/bash
 
 # 如果改了文件名请修改对应的变量值
+#!/bin/bash
 codeDir="./Markdown-Edit/"
 codeModulesNw="./node_modules/nw/"
 codeModulesNwBuilder="./node_modules/nw-builder/"
@@ -157,6 +153,7 @@ mv $codeModulesNw $codeModulesNwBuilder ./../
 # zip压缩并更名改后缀为 app.nw
 # 打包完成退回根目录
 zip -r ./app.nw ./ &&  echo 'Create success...' && cd .. && echo 'Back to the root directory...'
+
 # 移动打包后的 app.nw 源码 到 NW.js SDK中并添加执行文件权限
 mv $AppNw $nwSDK && echo 'Move success...' && chmod +x $nwSDK/app.nw && echo 'Add permission to succeed...'
 # 打包构建结束，将dev阶段的 nw，nw-builder 再放回 node_modules 依赖中

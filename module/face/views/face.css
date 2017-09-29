@@ -1,0 +1,65 @@
+@charset "UTF-8";
+.valign{
+    margin-top: 18%;
+}
+.row{
+    margin: 0;
+}
+#jieguo{
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: none;
+    width: 100%;
+    padding-top: 10%;
+    background: #ffffff;
+}
+.subtitle{
+    font-size: 15px;
+    color: #504d4d;
+}
+.subtext{
+    font-size: 14px;
+    color: rgba(23, 23, 23, 0.87);
+}
+.subinfo{
+    color: #bdbbbb;
+}
+.author-img{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 30px;
+}
+.closeinfo{
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 1px solid #c7c7c7;
+    width: 30px;
+    color: #a9a9a9;
+    text-align: center;
+    margin: 35px auto 0 auto;
+}
+.author-img,
+.author-text{
+    margin-bottom: 20px;
+}
+.heart-eyes{
+    position: absolute;
+    right: 38%;
+    top: 37%;
+    display: none;
+}
+.face-info{
+    color: #a7a7a7;
+    margin-top: 20px;
+    line-height: 27px;
+}
+#load-progress{
+    display: none;
+}

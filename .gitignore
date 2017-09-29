@@ -1,7 +1,7 @@
 .DS_Store
 node_modules/
 dist/
-views/
+module/face/views/
 routes/
 public/
 npm-debug.log*
