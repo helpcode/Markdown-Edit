@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/index-home.png"/>
+   <img width="90%" height="90%" src="http://okkzzhtds.bkt.clouddn.com/indexs-home-case.png"/>
 </p>
 
 <p align="center">
