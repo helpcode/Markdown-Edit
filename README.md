@@ -117,7 +117,7 @@ _当然了，如果你不需要 `nw`在开发阶段预览网站在PC端的效果
 
 更多的如何打包配置我都写在了帮助文档里面，请仔细阅读
 
-> [https://helpcode.github.io/DBeditor/](https://helpcode.github.io/DBeditor/)
+> [https://helpcode.github.io/Markdown-Edit/](https://helpcode.github.io/Markdown-Edit/)
 
 如果你想使用我的脚本来自动打包，那需要注意的是我们之前用`sudo mkdir DBeditor`创建了文件夹，这个文件夹里面除了放置项目源码` Markdown-Edit`，和` Markdown-Edit`同级的是`Nw.js`的 `SDK`，这里推荐下载这个SDK，原因在帮助文档里面写的很清楚，请仔细查看：
 
@@ -194,7 +194,7 @@ npm run online
 
 **Windows下打包：**
 
-照例先来看一张效果图，增强点信心吧！！
+照例先来看一张效果图(旧版本v1.3的截图)，增强点信心吧！！
 
 ![win_index](http://okkzzhtds.bkt.clouddn.com/win_index.PNG)
 
